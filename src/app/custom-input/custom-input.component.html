@@ -1,1 +1,19 @@
-<p>custom-input works!</p>
+<label for="customInput" class="mt-3" *ngIf="label">{{ label }}</label>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <div class="input-group-text">@</div>
+  </div>
+  <input
+    type="text"
+    class="form-control"
+    [class.is-invalid]="hasError"
+    id="customInput"
+    [placeholder]="placeholder"
+    (change)="onChange($event.target.value)"
+    (blur)="onBlur()"
+  >
+  <div class="invalid-feedback">
+    Required
+   </div>
+</div>
+
